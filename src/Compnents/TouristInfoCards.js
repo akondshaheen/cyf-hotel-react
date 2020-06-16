@@ -19,7 +19,11 @@ const TouristInfoCards = () => {
             Discover the city of Glasgow, with holiday ideas, accommodation...
           </p>
         </div>
-        <a className="property-button" href="https://www.peoplemakeglasgow.com">
+        <a
+          className="property-button"
+          href="https://www.peoplemakeglasgow.com"
+          target="_blank"
+        >
           Book
         </a>{" "}
       </div>
@@ -39,7 +43,11 @@ const TouristInfoCards = () => {
             information about what to see and do.
           </p>
         </div>
-        <a className="property-button" href="https://www.visitmanchester.com">
+        <a
+          className="property-button"
+          href="https://www.visitmanchester.com"
+          target="_blank"
+        >
           Book
         </a>{" "}
       </div>
@@ -60,7 +68,11 @@ const TouristInfoCards = () => {
           </p>
         </div>
 
-        <a className="property-button" href="https://www.visitlondon.com">
+        <a
+          className="property-button"
+          href="https://www.visitlondon.com"
+          target="_blank"
+        >
           Book
         </a>
       </div>
