@@ -1,6 +1,6 @@
 import React from "react";
 import SearchButton from "./SearchButton";
-import CustomerList from "./Search/CustomerList";
+import CustomerList from "./Search/CustomerData";
 
 const SearchResults = props => {
   return (
@@ -16,6 +16,7 @@ const SearchResults = props => {
             <th scope="col">Room Id</th>
             <th scope="col">Check in</th>
             <th scope="col">Check out</th>
+            <th scope="col">Nights</th>
           </tr>
         </thead>
         <tbody>
