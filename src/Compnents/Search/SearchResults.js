@@ -1,6 +1,6 @@
 import React from "react";
 import SearchButton from "./SearchButton";
-import CustomerList from "./Search/CustomerData";
+import CustomerList from "./CustomerData";
 
 const SearchResults = props => {
   return (

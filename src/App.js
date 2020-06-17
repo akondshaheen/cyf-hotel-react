@@ -5,6 +5,7 @@ import Bookings from "./Bookings";
 import "./App.css";
 import TouristInfoCards from "./Compnents/TouristInfoCards";
 import Footer from "./Compnents/Footer";
+import Restaurant from "./Restaurant";
 
 function App() {
   const footerElement = [
@@ -17,6 +18,7 @@ function App() {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+      <Restaurant />
       <Footer footerEl={footerElement} />
     </div>
   );
