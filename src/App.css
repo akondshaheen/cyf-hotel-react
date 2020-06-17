@@ -59,3 +59,8 @@ tr {
 .footer {
   text-align: center;
 }
+
+.orderAlign {
+  display: flex;
+  justify-self: left;
+}
