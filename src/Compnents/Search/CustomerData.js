@@ -4,6 +4,7 @@ import moment from "moment";
 const CustomerList = props => {
   const checkIn = moment(props.customer.checkInDate);
   const checkOut = moment(props.customer.checkOutDate);
+
   return (
     <tr>
       <th scope="row">{props.customer.id}</th>
