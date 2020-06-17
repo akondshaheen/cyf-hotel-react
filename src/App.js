@@ -3,7 +3,7 @@ import Heading from "./Compnents/Heading";
 
 import Bookings from "./Bookings";
 import "./App.css";
-import TouristInfoCards from "./Compnents/TouristInfoCards";
+import TouristInfoCards from "./Compnents/TouristInfo/TouristInfoCards";
 import Footer from "./Compnents/Footer";
 import Restaurant from "./Restaurant";
 
