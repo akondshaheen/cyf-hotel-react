@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
+import "../../../src/App.css";
 
 const CustomerList = props => {
   const checkIn = moment(props.customer.checkInDate);
   const checkOut = moment(props.customer.checkOutDate);
 
+  const [selected, setSelected] = useState(false);
+
+  const handleSelect = () => {
+    setSelected(!selected);
+  };
+
   return (
-    <tr>
+    <tr onClick={handleSelect} className={selected && "selected"}>
       <th scope="row">{props.customer.id}</th>
       <td>{props.customer.title}</td>
       <td>{props.customer.firstName}</td>

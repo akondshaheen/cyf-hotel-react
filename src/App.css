@@ -64,3 +64,7 @@ tr {
   display: flex;
   justify-self: left;
 }
+
+.selected {
+  background-color: seagreen;
+}

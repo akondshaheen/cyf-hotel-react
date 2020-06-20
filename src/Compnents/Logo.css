@@ -11,3 +11,8 @@
   border-radius: 4px;
   padding-right: 5px;
 }
+
+.color {
+  background: red;
+  background-color: red;
+}
