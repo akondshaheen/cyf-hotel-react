@@ -13,7 +13,7 @@ const CustomerList = props => {
   };
 
   return (
-    <tr onClick={handleSelect} className={selected && "selected"}>
+    <tr onClick={handleSelect} className={selected ? "selected" : null}>
       <th scope="row">{props.customer.id}</th>
       <td>{props.customer.title}</td>
       <td>{props.customer.firstName}</td>
