@@ -3,6 +3,8 @@ import SearchButton from "./SearchButton";
 import CustomerList from "./SearchResultsRow";
 
 const SearchResults = props => {
+  console.log(props.results);
+
   return (
     <div>
       <table className="table">

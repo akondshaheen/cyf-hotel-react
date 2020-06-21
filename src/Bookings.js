@@ -4,9 +4,6 @@ import SearchResults from "./Compnents/Search/SearchResults";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
-  const search = searchVal => {
-    console.info("TO DO!", searchVal);
-  };
   const [bookings, setBookings] = useState([]);
   const Url = "https://cyf-react.glitch.me";
 
@@ -15,6 +12,17 @@ const Bookings = () => {
       .then(results => results.json())
       .then(data => setBookings(data));
   }, []);
+
+  const search = searchVal => {
+    console.log(bookings);
+    setBookings(
+      bookings.filter(
+        event =>
+          event.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+          event.surname.toLowerCase().includes(searchVal.toLowerCase())
+      )
+    );
+  };
 
   return (
     <div className="App-content">
