@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import "../../../src/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function CustomerProfile({ id }) {
   const [bookingProfile, SetBookingProfile] = useState([]);
@@ -9,12 +11,22 @@ function CustomerProfile({ id }) {
       .then(data => SetBookingProfile(data));
   }, [id]);
   return (
-    <div>
-      Customer Profile Details
-      <p> {bookingProfile.id} </p>
-      <p> {bookingProfile.email} </p>
-      <p> {bookingProfile.vip ? "Yes" : "No"} </p>
-      <p> {bookingProfile.phoneNumber}</p>
+    <div class="list-group" className="CustomerProfile">
+      <h1 href="#" class="list-group-item list-group-item-action active">
+        Customer Profile Details
+      </h1>
+      <h1 href="#" class="list-group-item list-group-item-action">
+        Customer Id : {bookingProfile.id}
+      </h1>
+      <h1 href="#" class="list-group-item list-group-item-action">
+        Customer Email: {bookingProfile.email}
+      </h1>
+      <h1 href="#" class="list-group-item list-group-item-action">
+        Vip : {bookingProfile.vip ? "Yes" : "No"}{" "}
+      </h1>
+      <h1 href="#" class="list-group-item list-group-item-action disabled">
+        Customer Mo. : {bookingProfile.phoneNumber}
+      </h1>
     </div>
   );
 }

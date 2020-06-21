@@ -68,3 +68,8 @@ tr {
 .selected {
   background-color: seagreen;
 }
+
+.customerProfile {
+  margin-top: 420px;
+  background-color: rebeccapurple;
+}

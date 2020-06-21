@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 import SearchResultsRow from "./SearchResultsRow";
 import CustomerProfile from "./CustomerProfile";
+import "../../App.css";
 
 const SearchResults = ({ results }) => {
   const [customerId, setCustomerId] = useState(null);
@@ -23,7 +24,7 @@ const SearchResults = ({ results }) => {
             <th scope="col">Show Profile</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="table">
           {results.map((row, index) => {
             return (
               <SearchResultsRow
