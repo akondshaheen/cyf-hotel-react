@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import SearchButton from "./SearchButton";
-import CustomerList from "./SearchResultsRow";
+import SearchResultsRow from "./SearchResultsRow";
 import CustomerProfile from "./CustomerProfile";
 
 const SearchResults = ({ results }) => {
-  const [id, setId] = useState(null);
+  const [customerId, setCustomerId] = useState(null);
 
   return (
     <div>
@@ -25,12 +25,18 @@ const SearchResults = ({ results }) => {
         </thead>
         <tbody>
           {results.map((row, index) => {
-            return <CustomerList data={row} key={index} setId={setId} />;
+            return (
+              <SearchResultsRow
+                rowData={row}
+                key={index}
+                setId={setCustomerId}
+              />
+            );
           })}
         </tbody>
       </table>
       <div>
-        <CustomerProfile id={id} />
+        <CustomerProfile id={customerId} />
       </div>
     </div>
   );

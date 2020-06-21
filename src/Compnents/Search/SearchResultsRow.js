@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import moment from "moment";
 import "../../../src/App.css";
 
-const CustomerList = ({ data, setId }) => {
-  const checkIn = moment(data.checkInDate);
-  const checkOut = moment(data.checkOutDate);
+const SearchResultsRow = ({ rowData, setId }) => {
+  const checkIn = moment(rowData.checkInDate);
+  const checkOut = moment(rowData.checkOutDate);
 
   const [selected, setSelected] = useState(false);
 
@@ -13,19 +13,19 @@ const CustomerList = ({ data, setId }) => {
   };
 
   const onClickHandle = () => {
-    return setId(data.id);
+    return setId(rowData.id);
   };
 
   return (
     <tr onClick={handleSelect} className={selected ? "selected" : null}>
-      <th scope="row">{data.id}</th>
-      <td>{data.title}</td>
-      <td>{data.firstName}</td>
-      <td>{data.surname}</td>
-      <td>{data.email}</td>
-      <td>{data.roomId}</td>
-      <td>{data.checkInDate}</td>
-      <td>{data.checkOutDate}</td>
+      <th scope="row">{rowData.id}</th>
+      <td>{rowData.title}</td>
+      <td>{rowData.firstName}</td>
+      <td>{rowData.surname}</td>
+      <td>{rowData.email}</td>
+      <td>{rowData.roomId}</td>
+      <td>{rowData.checkInDate}</td>
+      <td>{rowData.checkOutDate}</td>
       <td>{checkOut.diff(checkIn, "days")}</td>
       <td>
         <button onClick={onClickHandle}>Show Profile</button>
@@ -34,4 +34,4 @@ const CustomerList = ({ data, setId }) => {
   );
 };
 
-export default CustomerList;
+export default SearchResultsRow;

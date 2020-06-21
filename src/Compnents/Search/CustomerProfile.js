@@ -9,13 +9,13 @@ function CustomerProfile({ id }) {
       .then(data => SetBookingProfile(data));
   }, [id]);
   return (
-    <ul>
+    <div>
       Customer Profile Details
-      <li> Booking ID: {bookingProfile.id} </li>
-      <li> Email: {bookingProfile.email} </li>
-      <li> VIP: {bookingProfile.vip ? "Yes" : "No"} </li>
-      <li> Mob No: {bookingProfile.phoneNumber}</li>
-    </ul>
+      <p> {bookingProfile.id} </p>
+      <p> {bookingProfile.email} </p>
+      <p> {bookingProfile.vip ? "Yes" : "No"} </p>
+      <p> {bookingProfile.phoneNumber}</p>
+    </div>
   );
 }
 
