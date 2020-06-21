@@ -6,11 +6,16 @@ import SearchResults from "./Compnents/Search/SearchResults";
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const Url = "https://cyf-react.glitch.me";
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(Url)
       .then(results => results.json())
-      .then(data => setBookings(data));
+      .then(data => {
+        setBookings(data);
+        setLoading(false);
+      })
+      .catch(error => alert(error.message));
   }, []);
 
   const search = searchVal => {
@@ -25,11 +30,17 @@ const Bookings = () => {
   };
 
   return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        <SearchResults results={bookings} />
-      </div>
+    <div>
+      {loading ? (
+        <span>Loading...</span>
+      ) : (
+        <div className="App-content">
+          <div className="container">
+            <Search search={search} />
+            <SearchResults results={bookings} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

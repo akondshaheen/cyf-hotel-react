@@ -28,7 +28,9 @@ const SearchResultsRow = ({ rowData, setId }) => {
       <td>{rowData.checkOutDate}</td>
       <td>{checkOut.diff(checkIn, "days")}</td>
       <td>
-        <button onClick={onClickHandle}>Show Profile</button>
+        <button className="btn btn-primary" onClick={onClickHandle}>
+          Show Profile
+        </button>
       </td>
     </tr>
   );
