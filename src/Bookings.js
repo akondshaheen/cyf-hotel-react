@@ -6,7 +6,7 @@ import "./style.css";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const Url = "https://cyf-react.glitch.me/delayed";
+  const Url = "https://cyf-react.glitch.me";
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState([]);
 
@@ -32,7 +32,7 @@ const Bookings = () => {
   };
 
   if (error.length != 0) {
-    return <h1 className="error">500 HTTP Error</h1>;
+    return <h1 className="error">{error}</h1>;
   } else if (loading) {
     return <h1 className="loading">Loading...</h1>;
   } else {
