@@ -5,8 +5,9 @@ import SearchResults from "./Compnents/Search/SearchResults";
 
 const Bookings = () => {
   const [bookings, setBookings] = useState([]);
-  const Url = "https://cyf-react.glitch.me";
+  const Url = "https://cyf-react.glitch.me/delayed";
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState([]);
 
   useEffect(() => {
     fetch(Url)
@@ -15,7 +16,7 @@ const Bookings = () => {
         setBookings(data);
         setLoading(false);
       })
-      .catch(error => alert(error.message));
+      .catch(error => setError(error));
   }, []);
 
   const search = searchVal => {
@@ -29,20 +30,35 @@ const Bookings = () => {
     );
   };
 
-  return (
-    <div>
-      {loading ? (
-        <span>Loading...</span>
-      ) : (
-        <div className="App-content">
-          <div className="container">
-            <Search search={search} />
-            <SearchResults results={bookings} />
-          </div>
+  if (error.length != 0) {
+    return <h1>500 HTTP Error</h1>;
+  } else if (loading) {
+    return <h1>Loading...</h1>;
+  } else {
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={search} />
+          <SearchResults results={bookings} />
         </div>
-      )}
-    </div>
-  );
+      </div>
+    );
+  }
+
+  // return (
+  //   <div>
+  //     {loading ? (
+  //       <span>Loading...</span>
+  //     ) : (
+  //       <div className="App-content">
+  //         <div className="container">
+  //           <Search search={search} />
+  //           <SearchResults results={bookings} />
+  //         </div>
+  //       </div>
+  //     )}
+  //   </div>
+  // );
 };
 
 export default Bookings;
