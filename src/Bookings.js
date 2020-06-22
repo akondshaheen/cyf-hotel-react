@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Compnents/Search/Search.js";
 import SearchResults from "./Compnents/Search/SearchResults";
+import "./style.css";
 // import FakeBookings from "./data/fakeBookings.json";
 
 const Bookings = () => {
@@ -16,7 +17,7 @@ const Bookings = () => {
         setBookings(data);
         setLoading(false);
       })
-      .catch(error => setError(error));
+      .catch(error => setError(error.message));
   }, []);
 
   const search = searchVal => {
@@ -31,9 +32,9 @@ const Bookings = () => {
   };
 
   if (error.length != 0) {
-    return <h1>500 HTTP Error</h1>;
+    return <h1 className="error">500 HTTP Error</h1>;
   } else if (loading) {
-    return <h1>Loading...</h1>;
+    return <h1 className="loading">Loading...</h1>;
   } else {
     return (
       <div className="App-content">
