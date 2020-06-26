@@ -2,3 +2,9 @@
 .loading {
   text-align: center;
 }
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  border: 2px solid orange;
+}

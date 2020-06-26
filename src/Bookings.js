@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import Search from "./Compnents/Search/Search.js";
 import SearchResults from "./Compnents/Search/SearchResults";
 import "./style.css";
+import BookingInput from "./Compnents/BookingInputs/BookingInput";
 // import FakeBookings from "./data/fakeBookings.json";
 
-const Bookings = () => {
+const Bookings = pros => {
   const [bookings, setBookings] = useState([]);
   const Url = "https://cyf-react.glitch.me";
   const [loading, setLoading] = useState(true);
@@ -19,6 +20,7 @@ const Bookings = () => {
       })
       .catch(error => setError(error.message));
   }, []);
+  console.log(bookings);
 
   const search = searchVal => {
     console.log(bookings);
@@ -45,21 +47,6 @@ const Bookings = () => {
       </div>
     );
   }
-
-  // return (
-  //   <div>
-  //     {loading ? (
-  //       <span>Loading...</span>
-  //     ) : (
-  //       <div className="App-content">
-  //         <div className="container">
-  //           <Search search={search} />
-  //           <SearchResults results={bookings} />
-  //         </div>
-  //       </div>
-  //     )}
-  //   </div>
-  // );
 };
 
 export default Bookings;

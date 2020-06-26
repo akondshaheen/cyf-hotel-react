@@ -73,3 +73,8 @@ tr {
   margin-top: 420px;
   background-color: rebeccapurple;
 }
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+}
